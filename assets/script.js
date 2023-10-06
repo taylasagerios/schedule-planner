@@ -2,14 +2,14 @@ $(function () {
 
     $('.saveBtn').on("click", function(){
         console.log($(this).siblings(".description").val())
-         var textValue = $(this).siblings(".description").val()
-         var divHour = $(this).parent().attr('id')
-         console.log(divHour)
+        var textValue = $(this).siblings(".description").val()
+        var divHour = $(this).parent().attr('id')
+        console.log(divHour)
         localStorage.setItem(divHour, textValue)
         } )
 
-     $(".time-block").each(function(){
-         console.log(this)
+    $(".time-block").each(function(){
+        console.log(this)
         var idval = $(this).attr("id")
         console.log(idval) 
         var split = idval.split('-')[1]
@@ -24,4 +24,8 @@ $(function () {
           $(this).addClass("future")
             }
           })
+
+        var currentDatetime = dayjs().format('MMM/DD/YYYY');
+        console.log (currentDatetime)
+    $('#currentDay').text(currentDatetime) 
 });
